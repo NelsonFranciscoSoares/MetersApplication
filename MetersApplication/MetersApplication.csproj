@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{65D072F2-3733-4860-A150-1E655A65ABDB}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MetersApplication</RootNamespace>
+    <AssemblyName>MetersApplication</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PipelineConstants.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MetersApplication.Core\MetersApplication.Core.csproj">
+      <Project>{cb8b9145-0b36-48ed-b486-e5a67a79245e}</Project>
+      <Name>MetersApplication.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MetersApplication.DataModel\MetersApplication.DataModel.csproj">
+      <Project>{13926472-7101-4662-8aec-16be54d1e700}</Project>
+      <Name>MetersApplication.DataModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MetersApplication.FileReader\MetersApplication.FileReader.csproj">
+      <Project>{a030a273-b4bb-45a7-b12b-3b96fdb06f42}</Project>
+      <Name>MetersApplication.FileReader</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MetersApplication.FileWriter\MetersApplication.FileWriter.csproj">
+      <Project>{c3e42a2f-b777-4f55-86c8-6f185e637433}</Project>
+      <Name>MetersApplication.FileWriter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MetersApplication.Parser\MetersApplication.Parser.csproj">
+      <Project>{9d57c883-e11a-4bf2-bb23-7854426b1c07}</Project>
+      <Name>MetersApplication.Parser</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MetersApplication.ProtocolBase\MetersApplication.ProtocolBase.csproj">
+      <Project>{df18b410-72dd-4ed3-a844-d8a51f6fd233}</Project>
+      <Name>MetersApplication.ProtocolBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MetersApplication.Protocol\MetersApplication.Protocol.csproj">
+      <Project>{f3cb1ff6-4854-454e-9282-c6e054cee1ef}</Project>
+      <Name>MetersApplication.Protocol</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MetersApplication.Queue\MetersApplication.Queue.csproj">
+      <Project>{a80bc797-7de6-4a3a-aecd-f3e8dc1e1221}</Project>
+      <Name>MetersApplication.Queue</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MetersApplication.Socket\MetersApplication.Socket.csproj">
+      <Project>{ddbca3d0-83c6-4eee-bd4c-376fe925ddaa}</Project>
+      <Name>MetersApplication.Socket</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MetersApplication.Utils\MetersApplication.Utils.csproj">
+      <Project>{ca064235-268f-43cc-b98c-c4cf3c83a589}</Project>
+      <Name>MetersApplication.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
